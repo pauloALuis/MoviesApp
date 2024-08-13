@@ -1,0 +1,12 @@
+
+-- SQLite
+INSERT INTO Users (Id, UserName, PasswordHash, PasswordSalt)
+VALUES (1, "bob", "bom1111", "bom1111");
+
+-- SQLite
+INSERT INTO Users (Id, UserName, PasswordHash, PasswordSalt)
+VALUES (21, "Tom", "Tom2121", "Tom2121");
+-- SQLite
+INSERT INTO Users (Id, UserName, PasswordHash, PasswordSalt)
+VALUES (3, "Jane", "Jane3333", "Jane333");
+

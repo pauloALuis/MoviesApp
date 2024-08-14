@@ -58,7 +58,7 @@ namespace API.Controllers
               var moveis = await _context.Movies.FindAsync(id);
               return moveis;
           }
-
+/*
         // GET api/<ValuesController>/5 
         // https://localhost:5224/api/Movie/6  http://localhost:5223/api/Movies/6
         [HttpGet("{id}", Name = "MovieTest")]
@@ -78,7 +78,7 @@ namespace API.Controllers
               //var moveis =;
               //if (moveis == null) return NotFound();
               return _context.Movies.ToList<AppMovie>();
-          }
+          }*/
 
     }
 }

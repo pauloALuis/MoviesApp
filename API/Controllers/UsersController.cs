@@ -9,7 +9,7 @@ namespace API.Controllers
 {
 
     // [ApiController]
-    [Route("api/[Controller]")] // route: api/User
+    //[Route("api/[Controller]")] // route: api/User
     [Authorize]
     public class UsersController : BaseApiController
     {
@@ -37,8 +37,26 @@ namespace API.Controllers
         [HttpGet("{id}", Name = "User")]
         public async Task<ActionResult<AppUser>> GetUser(int id)
         {
-            var user = await _dataContext.Users.FindAsync(id);
-            return user;
+            
+            try
+            {
+                if (id <= 0 || id >  _dataContext.Users.ToList().Count())
+                    return BadRequest("User Id mismatch");
+
+
+                var user = await _dataContext.Users.FindAsync(id);
+
+                if (user == null)
+                    return NotFound($"User with Id = {id} not found");
+
+                return user;
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error fetch user");
+            }
         }
 
         #endregion ----------------------------------------------------------------------------------

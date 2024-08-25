@@ -12,8 +12,8 @@ namespace API.Controllers
 
     public class BaseApiController : ControllerBase
     {
-        private readonly DataContext _dataContext;
-        /*
+       /* private readonly DataContext _dataContext;
+       
                 public BaseApiController(DataContext dataContext)
                 {
                     _dataContext = dataContext;
